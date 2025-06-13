@@ -1,0 +1,10 @@
+site_name: Serverless Python
+
+nav:
+  - Home: index.md
+  - Workshop Guide:
+      - Step 1: intro.md
+      - Step 2: setup.md
+      - Step 3: deploy.md
+theme:
+  name: material
