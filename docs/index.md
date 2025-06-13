@@ -1,17 +1,11 @@
-# Welcome to MkDocs
+# Bienvenidos PyCon Colombia
 
 For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 
-## Commands
+## Python + Serverles para crear APIs
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+* `Conceptos` - Serverless Framework.
 
-## Project layout
+## Manos a la obra
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+    Ideas
