@@ -4,6 +4,7 @@ site_url: https://chrisfx.github.io/serverless-python/
 nav:
   - Inicio: 
       - Introducción: index.md
+      - Python + Serveless: python-serverless.md
   - Fundamentos:
       - ¿Qué es Serverless?: serverless.md
   - Herramientas Python Serverless:

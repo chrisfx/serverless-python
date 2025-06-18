@@ -1,0 +1,50 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.pyenv/
+.pipenv/
+
+# Serverless Framework
+.serverless/
+.webpack/
+
+# Node modules
+node_modules/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs and local databases
+*.log
+*.sqlite3
+
+# AWS credentials (never commit these)
+.aws/
+
+# MkDocs build directory
+site/
+
+# Python tooling
+pip-log.txt
+pip-delete-this-directory.txt
+htmlcov/
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+
+# OS-generated files
+.DS_Store
+Thumbs.db
