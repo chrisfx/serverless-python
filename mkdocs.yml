@@ -2,10 +2,19 @@ site_name: Serverless Python
 site_url: https://chrisfx.github.io/serverless-python/
 
 nav:
-  - Home: index.md
-  - Workshop Guide:
-      - Step 1: intro.md
-      - Step 2: setup.md
-      - Step 3: deploy.md
+  - Inicio: 
+      - Introducción: index.md
+  - Fundamentos:
+      - ¿Qué es Serverless?: serverless.md
+  - Herramientas Python Serverless:
+      - AWS Chalice: chalice.md
+      - Serverless Framework: serverless-framework.md
+      - AWS SAM: aws-sam.md
+      - Comparativa: comparativa.md
+  - Tecnologías Clave:
+      - Servicios en acción: tecnologias.md
+      - Mini-demo: mini-demo.md
+  - Cierre:
+      - Recapitulación y recursos: cierre.md
 theme:
   name: material
