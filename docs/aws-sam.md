@@ -44,10 +44,10 @@ Levanta una versión local de tu API Gateway + Lambda en http://localhost:3000.
 
 ```mermaid
 graph TD
-    A[📝 Escribes código + YAML] --> B[🔧 sam build]
-    B --> C[🧪 sam local invoke / start-api (opcional)]
-    C --> D[🚀 sam deploy --guided]
-    D --> E[✅ Aplicación desplegada en AWS]
+  A[Escribes código + YAML] --> B[sam build]
+  B --> C[sam local invoke o start-api]
+  C --> D[sam deploy --guided]
+  D --> E[Aplicación desplegada en AWS]
 ```
 
 En pipelines automatizados, puedes hacer:

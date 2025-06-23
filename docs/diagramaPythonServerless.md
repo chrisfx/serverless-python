@@ -2,11 +2,8 @@
 
 ```mermaid
 graph TD
-    A[Usuario: Cliente HTTP] -->|Petición HTTP| B(API Gateway)
-    B -->|Invoca| C[Lambda Function (Python)]
-    C -->|Consulta/Almacena datos| D[DynamoDB]
-    C -->|Procesa lógica| E[Lógica Python]
-    D -->|Devuelve datos| C
-    C -->|Respuesta| B
-    B -->|Respuesta JSON| A
+  A[Inicio] --> B[API Gateway]
+  B --> C[Lambda]
+  C --> D[DynamoDB]
+  C --> E[Respuesta]
 ```
