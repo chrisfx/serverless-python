@@ -5,8 +5,10 @@ nav:
   - Inicio: 
       - Introducción: index.md
       - Python + Serveless: python-serverless.md
+      - Diagrama: diagramaPythonServerless.md
   - Fundamentos:
       - ¿Qué es Serverless?: serverless.md
+      - Casos de uso Python y Serverless: casosdeuso.md
   - Herramientas Python Serverless:
       - AWS Chalice: chalice.md
       - Serverless Framework: serverless-framework.md
@@ -19,3 +21,15 @@ nav:
       - Recapitulación y recursos: cierre.md
 theme:
   name: material
+
+
+plugins:
+  - search
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - attr_list
+
+extra_javascript:
+  - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
