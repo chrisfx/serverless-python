@@ -18,7 +18,7 @@ nav:
       - Servicios en acción: tecnologias.md
       - Mini-demo: mini-demo.md
   - Cierre:
-      - Recapitulación y recursos: cierre.md
+      - Recapitulación y recursos: referencias.md
 theme:
   name: material
 

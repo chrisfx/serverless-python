@@ -48,6 +48,14 @@ chalice local
 Abre en tu navegador:
 http://localhost:8000/
 
+#### Puedes asignar puerto
+
+```bash
+chalice local --port 8080
+```     
+
+#### Desplegar en AWS
+
 ```bash
 chalice deploy
 ```
