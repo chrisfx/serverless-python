@@ -14,6 +14,53 @@ AWS Chalice es un microframework de Python desarrollado por Amazon para crear y 
 - 📂 Estructura mínima	No necesitas definir manualmente archivos de infraestructura (yaml)
 
 
+- AWS Chalice es un framework de Python que permite crear y desplegar aplicaciones Serverless utilizando AWS Lambda y API Gateway de forma sencilla.
+
+### Requisitos previos
+Antes de instalar Chalice, asegúrate de tener instalado lo siguiente:
+
+- ✅ Python 3.7 o superior
+
+- ✅ pip (el gestor de paquetes de Python)
+
+- ✅ Una cuenta de AWS (capa libre) con credenciales configuradas (aws configure)
+
+- ✅ Git (opcional, pero recomendado)
+
+### Crear un entorno virtual (opcional, pero recomendado)
+
+```bash
+python3 -m venv .venv
+uv venv #si deseas usar uv
+source .venv/bin/activate  # En Linux o macOS
+.venv\Scripts\activate     # En Windows
+```
+
+### Instalar Chalice
+```bash
+pip install chalice
+```
+- Verificar instalación
+```bash
+chalice --version
+```
+
+### Configurar tus credenciales de AWS
+
+```bash
+aws configure
+```
+
+Y proporciona:
+
+- Access Key ID
+
+- Secret Access Key
+
+- Región predeterminada (por ejemplo: us-east-1)
+
+- Formato de salida (puedes dejarlo en blanco o usar json)
+
 ### Comando para iniciar (chalice new-project)
 
 ```bash

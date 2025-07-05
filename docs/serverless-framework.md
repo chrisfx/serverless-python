@@ -4,6 +4,73 @@ Serverless Framework es una herramienta de infraestructura como código (IaC) qu
 
 - Es uno de los frameworks más maduros y usados para Lambda + API Gateway.
 
+
+## Instalación de Serverless Framework
+Serverless Framework es una herramienta de código abierto que facilita el desarrollo, despliegue y operación de aplicaciones serverless (sin servidor), especialmente con AWS Lambda.
+
+Requisitos previos
+Antes de instalar Serverless Framework, necesitas:
+
+- ✅ Tener instalado Node.js (v14 o superior recomendado)
+
+- ✅ Tener instalado npm (v6 o superior)
+
+- ✅ Tener una cuenta de AWS con credenciales configuradas (aws configure)
+
+Puedes verificar si tienes Node.js y npm con:
+```bash
+node -v
+npm -v
+```
+
+### Requisitos previos
+Antes de instalar Chalice, asegúrate de tener instalado lo siguiente:
+
+- ✅ Python 3.7 o superior
+
+- ✅ pip (el gestor de paquetes de Python)
+
+- ✅ Una cuenta de AWS (capa libre) con credenciales configuradas (aws configure)
+
+- ✅ Git (opcional, pero recomendado)
+
+### Crear un entorno virtual (opcional, pero recomendado)
+
+```bash
+python3 -m venv .venv
+uv venv #si deseas usar uv
+source .venv/bin/activate  # En Linux o macOS
+.venv\Scripts\activate     # En Windows
+```
+```bash
+npm install -g serverless
+```
+Verifica la instalación:
+
+```bash
+serverless --version
+Salida esperada:
+```
+```yaml
+Framework Core: 3.x.x
+Plugin: 6.x.x
+SDK: 4.x.x
+```
+También puedes usar el comando abreviado:
+
+```bash
+sls --version
+```
+
+### Crear un nuevo proyecto Serverless
+
+```bash
+serverless create --template aws-python --path mi-api-serverless
+cd mi-api-python
+```
+
+
+
 ## serverless.yml explicado
 El archivo serverless.yml define toda la aplicación:
 ```yaml
@@ -73,3 +140,29 @@ def hello(event, context):
     }
 ```
 
+### Instala dependencias si es necesario:
+```bash
+pip install -r requirements.txt
+```
+### Desplegar AWS
+```bash
+sls deploy
+```
+### Salida
+
+```bash
+endpoints:
+  GET - https://xxxxx.execute-api.us-east-1.amazonaws.com/dev/hello
+functions:
+  hello: mi-api-serverless-dev-hello
+```
+
+### Invocar la función desde la línea de comandos
+```bash
+sls invoke -f hello
+```
+### Eliminar los recursos de AWS
+```bash
+sls remove
+```
+Esto borra todos los recursos creados (Lambda, API Gateway, roles, etc.).

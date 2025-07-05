@@ -12,11 +12,11 @@ nav:
   - Herramientas Python Serverless:
       - AWS Chalice: chalice.md
       - Serverless Framework: serverless-framework.md
+      - Instalacion AWS SAM: aws-sam-instalacion
       - AWS SAM: aws-sam.md
       - Comparativa: comparativa.md
   - Tecnologías Clave:
       - Servicios en acción: tecnologias.md
-      - Mini-demo: mini-demo.md
   - Cierre:
       - Recapitulación y recursos: referencias.md
 theme:
