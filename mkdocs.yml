@@ -10,6 +10,7 @@ nav:
       - ¿Qué es Serverless?: serverless.md
       - Casos de uso Python y Serverless: casosdeuso.md
   - Herramientas Python Serverless:
+      - Recomendaciones: recomendaciones-apis.md
       - AWS Chalice: chalice.md
       - Serverless Framework: serverless-framework.md
       - Instalacion AWS SAM: aws-sam-instalacion
