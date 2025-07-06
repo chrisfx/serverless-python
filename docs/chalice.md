@@ -84,7 +84,7 @@ app = Chalice(app_name='myapi')
 
 @app.route('/')
 def index():
-    return {'message': 'Hello from Chalice'}
+    return {'message': 'Hola Pycon Colombia 2025'}
 ```
 
 ### Instrucciones para probar local o desplegar
