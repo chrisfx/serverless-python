@@ -1,26 +1,64 @@
 site_name: Serverless Python
 site_url: https://chrisfx.github.io/serverless-python/
 
+# nav:
+#   - Inicio: 
+#       - Introducción: index.md
+#       - Python + Serveless: python-serverless.md
+#       - Diagrama: diagramaPythonServerless.md
+#   - Fundamentos:
+#       - ¿Qué es Serverless?: serverless.md
+#       - Casos de uso Python y Serverless: casosdeuso.md
+#   - Herramientas Python Serverless:
+#       - Recomendaciones: recomendaciones-apis.md
+#       - Instalación UV: instalacion-uv.md
+#       - Configuración AWS: aws-setup.md
+#       - AWS Chalice: chalice.md
+#       - Serverless Framework: serverless-framework.md
+#       - Instalacion AWS SAM: aws-sam-instalacion
+#       - AWS SAM: aws-sam.md
+#       - Comparativa: comparativa.md
+#   - Tecnologías Clave:
+#       - Servicios en acción: tecnologias.md
+#   - Referencias:
+#       - Recapitulación y recursos: referencias.md
+#   - AWS setup:
+#       - Configuración AWS: aws-setup.md
 nav:
-  - Inicio: 
+  - Inicio:
       - Introducción: index.md
-      - Python + Serveless: python-serverless.md
-      - Diagrama: diagramaPythonServerless.md
-  - Fundamentos:
+      - Python + Serverless: python-serverless.md
+      - Diagrama general: diagramaPythonServerless.md # Mejorarlo
+
+  - Fundamentos Serverless:
       - ¿Qué es Serverless?: serverless.md
-      - Casos de uso Python y Serverless: casosdeuso.md
-  - Herramientas Python Serverless:
-      - Recomendaciones: recomendaciones-apis.md
-      - Instalación UV: instalacion-uv.md
-      - AWS Chalice: chalice.md
-      - Serverless Framework: serverless-framework.md
-      - Instalacion AWS SAM: aws-sam-instalacion
-      - AWS SAM: aws-sam.md
-      - Comparativa: comparativa.md
-  - Tecnologías Clave:
-      - Servicios en acción: tecnologias.md
-  - Cierre:
-      - Recapitulación y recursos: referencias.md
+      - Casos de uso con Python: casosdeuso.md
+      - Servicios clave en AWS: tecnologias.md
+
+  - Preparación del entorno:
+      - Requisitos y recomendaciones: recomendaciones-apis.md
+      - Instalación de entorno virtual (uv): instalacion-uv.md
+      - Configuración de cuenta AWS: aws-setup.md
+      - Verificación del entorno: verificacion-entorno.md  # (opcional pero útil)
+
+  - Frameworks Serverless con Python:
+      - AWS Chalice:
+          - Instalación y configuración: chalice.md
+      - Serverless Framework:
+          - Instalación y configuración: serverless-framework.md
+      - AWS SAM:
+          - Instalación: aws-sam-instalacion.md
+          - Uso básico: aws-sam.md
+      - Comparativa de frameworks: comparativa.md
+
+  - Buenas prácticas:
+      - Buenas prácticas y seguridad: buenas-practicas.md
+
+  - Recursos y referencias:
+      - Referencias: referencias.md # Agregar bibliografía 
+      - Enlaces útiles: enlaces.md
+      - Glosario de términos: glosario.md
+
 theme:
   name: material
 

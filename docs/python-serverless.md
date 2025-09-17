@@ -1,6 +1,6 @@
 # 🐍 Python + ⚡ Serverless
 
-## ¿Por qué combinar Python con Serverless?
+## ¿Por qué combinar Python con tecnologías Serverless?
 
 Combinar **Python** con una arquitectura **serverless** acelera el desarrollo de soluciones backend modernas, eliminando la necesidad de administrar servidores.  
 Te enfocas en lo importante: **escribir código y desplegarlo de forma rápida y escalable**.
@@ -13,7 +13,7 @@ Te enfocas en lo importante: **escribir código y desplegarlo de forma rápida y
   Python es un lenguaje simple, legible y con una gran variedad de librerías. Permite implementar lógica de negocio con menos código y en menos tiempo.
 
 - ⚙️ **Despliegue simplificado**  
-  Con **Serverless Framework**, puedes desplegar funciones Lambda con un solo comando, incluyendo:
+  Con tecnologías y frameworks **Serverless**, puedes desplegar funciones Lambda con un solo comando, incluyendo:
   - configuración de **API Gateway**
   - permisos **IAM**
   - recursos como **DynamoDB**, **S3**, entre otros.

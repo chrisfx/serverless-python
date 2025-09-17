@@ -53,11 +53,7 @@ AWS ofrece una amplia gama de servicios serverless que permiten construir aplica
 - Backend de aplicaciones móviles o juegos
 - Registro de eventos (logs, métricas)
 
----
 
-## Arquitectura de ejemplo
-
-Un flujo típico de aplicación web serverless en AWS puede verse así:
 
 
 

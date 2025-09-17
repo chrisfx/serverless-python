@@ -2,7 +2,7 @@
 
 # 🚀 Enfócate en el código, olvídate de administrar servidores
 
-> En este taller no configuramos servidores, balanceadores ni firewalls. Solo escribimos código Python y lo desplegamos con herramientas modernas en la nube.
+> En este taller vamos a escribir código Python y lo desplegamos con herramientas modernas en la nube de AWS, sin preocuparnos por la infraestructura.
 
 ---
 
@@ -11,7 +11,7 @@
 Aprenderás a desarrollar y desplegar **APIs modernas** utilizando:
 
 - 🐍 **Python**
-- ⚙️ **Serverless Framework**
+- ⚙️ Tecnologías de desarrollo **Serverless**
 - ☁️ Servicios **serverless de AWS** como Lambda, API Gateway, DynamoDB, entre otros.
 
 ---
@@ -19,9 +19,9 @@ Aprenderás a desarrollar y desplegar **APIs modernas** utilizando:
 ### Al finalizar el taller podrás:
 
 - ✅ Comprender los fundamentos de la **arquitectura serverless**.
-- ✅ Utilizar **Serverless Framework** para automatizar el despliegue de funciones Lambda.
+- ✅ Utilizar al menos una tecnología **Serverless** para automatizar el despliegue de funciones Lambda.
 - ✅ Diseñar y consumir **APIs RESTful** usando Python + API Gateway.
-- ✅ Aplicar buenas prácticas en desarrollo, pruebas y **CI/CD serverless**.
+- ✅ Aplicar buenas prácticas en desarrollo, pruebas y **CI/CD**.
 
 ---
 

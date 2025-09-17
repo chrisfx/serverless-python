@@ -1,4 +1,4 @@
-# Recomendaciones para exponer APIs en la web
+# Recomendaciones para exponer APIs Serverless
 
 Estas son buenas prácticas y herramientas recomendadas para desarrollar y exponer APIs de manera profesional, segura y eficiente.
 
@@ -30,52 +30,12 @@ source .venv/bin/activate
 
 ---
 
-## ⚙️ Usa herramientas modernas según tu stack
+## ⚙️ Configuración de AWS
 
-| Lenguaje | Framework recomendados |
-|---------|------------------------|
-| Python  | FastAPI, Flask, Django REST |
-| Node.js | Express, NestJS |
-| Go      | Gin, Fiber |
-
----
-
-## 🌐 Usa servidores de desarrollo modernos
-
-- Para FastAPI o Flask, usa **Uvicorn** o **Gunicorn** en producción.
 ```bash
-uvicorn main:app --host 0.0.0.0 --port 8000
+aws configure
+# enter AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, region
 ```
-
-- Para producción: configura Nginx como proxy inverso.
-
----
-
-## 🔐 Seguridad desde el inicio
-
-- Activa HTTPS (Let’s Encrypt).
-- Implementa autenticación (OAuth2, JWT, API Keys).
-- Habilita y configura correctamente CORS.
-- Valida entradas de usuario.
-
----
-
-## 📤 Despliegue y exposición
-
-- Opciones comunes:
-  - Serverless: AWS Lambda + API Gateway, Vercel, Netlify
-  - Contenedores: Docker + ECS, Kubernetes, etc.
-  - VPS: DigitalOcean, Linode, EC2, etc.
-
----
-
-## 🧪 Pruebas y documentación
-
-- Usa `pytest` o `unittest` para pruebas automatizadas.
-- Documenta tu API con:
-  - Swagger/OpenAPI
-  - Postman
-  - Redoc
 
 ---
 

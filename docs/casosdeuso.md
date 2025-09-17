@@ -6,8 +6,9 @@ Crea **APIs backend** completamente sin servidores usando:
 
 - **AWS Lambda** + **API Gateway**
 - Frameworks como:
-  - [AWS Chalice](https://github.com/aws/chalice)
-  - [FastAPI](https://fastapi.tiangolo.com/) + Serverless Framework
+  - [AWS Chalice](https://chrisfx.github.io/serverless-python/chalice/)
+  - [FastAPI](https://fastapi.tiangolo.com/) + [Serverless Framework](https://chrisfx.github.io/serverless-python/serverless-framework/)
+  - [AWS SAM](https://chrisfx.github.io/serverless-python/aws-sam/)
 
 **Ideal para:**
 - Prototipos rápidos
@@ -26,8 +27,9 @@ Ejecuta scripts Python en momentos definidos usando **Amazon EventBridge** o exp
 - 🧹 Limpieza de datos periódica
 - 🔄 Sincronización entre sistemas externos
 
-!!! tip
-    Puedes usar el evento `schedule` de Serverless Framework para definir tareas recurrentes con sintaxis tipo cron.
+
+>  
+>   Puedes usar el evento `schedule` de Serverless Framework para definir tareas recurrentes con sintaxis tipo cron.
 
 ---
 
@@ -58,13 +60,14 @@ Realiza tareas comunes como:
 
 Ejecuta inferencias de modelos previamente entrenados directamente desde Lambda.
 
-**Opciones comunes:**
+**Opciones:**
 
 - Modelos livianos (scikit-learn, ONNX, XGBoost) empaquetados en la función Lambda
 - Llamadas desde Lambda a un endpoint de **SageMaker** para inferencia remota
+- *Bedrock*
 
-!!! note
-    Lambda es ideal para IA/ML cuando necesitas **respuestas rápidas** y no procesamiento intensivo (entrenamiento).
+>
+>   Lambda es ideal para IA/ML cuando necesitas **respuestas rápidas** y no procesamiento intensivo > (entrenamiento).
 
 ---
 
@@ -105,5 +108,5 @@ Ejecuta cualquier lógica backend donde no se requiera mantener sesiones o conex
 - Procesamiento de eventos aislados
 - Funciones de negocio independientes
 
-!!! important
-    Serverless es ideal cuando el backend no necesita guardar "estado" entre ejecuciones. Cada función es efímera y autocontenida.
+
+> *Serverless es ideal cuando el backend no necesita guardar "estado" entre ejecuciones. Cada función es efímera y autocontenida.*
