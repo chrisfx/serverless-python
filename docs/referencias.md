@@ -10,3 +10,6 @@ https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/s
 
 ## Chalice
 https://aws.github.io/chalice/quickstart.html
+
+## Recursos 
+Repositorio del taller: [GitHub](https://chrisfx.github.io/serverless-python/).

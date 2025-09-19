@@ -81,7 +81,7 @@ source .venv/bin/activate  # Linux/macOS
 ## 📦 Instalar dependencias
 
 ```bash
-uv pip install requests fastapi
+uv pip install chalice
 ```
 
 Para congelar dependencias:
@@ -103,7 +103,3 @@ uv self-update
 ## ❌ Desinstalar `uv`
 
 Borra el ejecutable desde el directorio donde fue instalado (por defecto en `~/.cargo/bin` o `%USERPROFILE%\.cargo\bin`).
-
----
-
-¿Quieres más ejemplos con FastAPI, Flask u otro framework?

@@ -1,14 +1,14 @@
-# Bienvenidos PyCon Colombia
+# Bienvenidos PyCon 2025
 
 # 🚀 Enfócate en el código, olvídate de administrar servidores
 
-> En este taller vamos a escribir código Python y lo desplegamos con herramientas modernas en la nube de AWS, sin preocuparnos por la infraestructura.
+> En este taller vamos a escribir código en Python utilizando herramientas *Serverless* y vamos a desplegar APIs en la nube de AWS, sin la necesidad de gestionar la infraestructura.
 
 ---
 
 ## 🎯 Objetivo del taller
 
-Aprenderás a desarrollar y desplegar **APIs modernas** utilizando:
+Aprender a desarrollar y desplegar APIs modernas utilizando:
 
 - 🐍 **Python**
 - ⚙️ Tecnologías de desarrollo **Serverless**
@@ -38,5 +38,3 @@ Este taller es ideal para:
 💡 **Tip**: No necesitas experiencia previa en AWS para comenzar, pero sí te será útil estar familiarizado con la terminal y conceptos básicos de APIs.
 
 
-## Recursos 
-Repositorio del taller: [GitHub](https://chrisfx.github.io/serverless-python/).

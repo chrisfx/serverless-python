@@ -1,29 +1,6 @@
 site_name: Serverless Python
 site_url: https://chrisfx.github.io/serverless-python/
 
-# nav:
-#   - Inicio: 
-#       - Introducción: index.md
-#       - Python + Serveless: python-serverless.md
-#       - Diagrama: diagramaPythonServerless.md
-#   - Fundamentos:
-#       - ¿Qué es Serverless?: serverless.md
-#       - Casos de uso Python y Serverless: casosdeuso.md
-#   - Herramientas Python Serverless:
-#       - Recomendaciones: recomendaciones-apis.md
-#       - Instalación UV: instalacion-uv.md
-#       - Configuración AWS: aws-setup.md
-#       - AWS Chalice: chalice.md
-#       - Serverless Framework: serverless-framework.md
-#       - Instalacion AWS SAM: aws-sam-instalacion
-#       - AWS SAM: aws-sam.md
-#       - Comparativa: comparativa.md
-#   - Tecnologías Clave:
-#       - Servicios en acción: tecnologias.md
-#   - Referencias:
-#       - Recapitulación y recursos: referencias.md
-#   - AWS setup:
-#       - Configuración AWS: aws-setup.md
 nav:
   - Inicio:
       - Introducción: index.md
@@ -78,3 +55,6 @@ markdown_extensions:
 extra_javascript:
   - https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js
   - js/init-mermaid.js
+
+extra_css:
+  - css/extra.css 

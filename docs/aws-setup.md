@@ -1,3 +1,25 @@
+# Cuenta AWS
+
+🔑 ¿Dónde encontrar o generar las claves de acceso (Access Key ID y Secret Access Key)?
+
+Ir a IAM (Identity and Access Management):
+
+1. Desde la consola de AWS, busca el servicio "IAM" en la barra de búsqueda.
+
+2. Seleccionar "Usuarios" (Users) en el menú lateral izquierdo.
+
+3. Seleccionar el usuario con el que deseas trabajar (debe tener permisos programáticos habilitados).
+
+4. Ir a la pestaña "Credenciales de seguridad" (Security credentials).
+
+5. En la sección "Claves de acceso" (Access keys), hacer clic en "Crear clave de acceso" (Create access key) si no existe una.
+
+🔐 Se mostrará:
+
+Access Key ID
+
+Secret Access Key (solo una vez, ¡guárdalo en un lugar seguro!)
+
 ## AWS Configuración de credenciales
 
 ```bash

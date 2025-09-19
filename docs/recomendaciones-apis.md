@@ -1,6 +1,6 @@
-# Recomendaciones para exponer APIs Serverless
+# Preparación del entorno de desarrollo
 
-Estas son buenas prácticas y herramientas recomendadas para desarrollar y exponer APIs de manera profesional, segura y eficiente.
+Herramientas recomendadas y buenas prácticas para desarrollar y exponer **APIs Serverless**.
 
 ---
 
@@ -14,23 +14,37 @@ Estas son buenas prácticas y herramientas recomendadas para desarrollar y expon
 ## 🐍 Usa entornos virtuales con `uv` o `venv`
 
 - Aísla las dependencias del proyecto usando entornos virtuales.
+- Recomendado **Python** 3.10 o superior.
 - Recomendado: [`uv`](https://github.com/astral-sh/uv) por su velocidad y compatibilidad.
+- Instalación [`uv`](https://chrisfx.github.io/serverless-python/instalacion-uv/) 
 
 ```bash
 # Crear entorno virtual con uv
 uv venv
+# Activar el entorno virtual dentro del folder contenedor del .venv
 source .venv/bin/activate
+# Desactivar
+deactivate
 ```
 
-- Alternativa tradicional:
+- Alternativa tradicional virtual environment:
 ```bash
+# Crear entorno virtual
 python3 -m venv .venv
+# Activar el entorno virtual dentro del folder contenedor del .venv
 source .venv/bin/activate
+# Desactivar
+deactivate
 ```
 
 ---
 
+
+
 ## ⚙️ Configuración de AWS
+
+- Configuración [`AWS`](https://chrisfx.github.io/serverless-python/aws-setup/)
+
 
 ```bash
 aws configure
