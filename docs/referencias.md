@@ -57,3 +57,8 @@
 
 - [Acceder al repositorio en GitHub](https://chrisfx.github.io/serverless-python/)  
   Ver ejemplos, ejercicios y materiales del taller.
+
+
+### LinkedIn
+
+[Christian Abrajan](https://www.linkedin.com/in/chrisfx/)
