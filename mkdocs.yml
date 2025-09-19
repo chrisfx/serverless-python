@@ -20,9 +20,9 @@ nav:
 
   - Frameworks Serverless con Python:
       - AWS Chalice:
-          - Instalación y configuración: chalice.md
+          - Instalación, configuración y despliegue: chalice.md
       - Serverless Framework:
-          - Instalación y configuración: serverless-framework.md
+          - Instalación, configuración y despliegue: serverless-framework.md
       - AWS SAM:
           - Instalación: aws-sam-instalacion.md
           - Uso básico: aws-sam.md
@@ -33,7 +33,7 @@ nav:
 
   - Recursos y referencias:
       - Referencias: referencias.md # Agregar bibliografía 
-      - Enlaces útiles: enlaces.md
+      # - Enlaces útiles: enlaces.md
       - Glosario de términos: glosario.md
 
 theme:
