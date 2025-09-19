@@ -1,0 +1,1551 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://chrisfx.github.io/serverless-python/chalice/">
+      
+      
+        <link rel="prev" href="../verificacion-entorno/">
+      
+      
+        <link rel="next" href="../serverless-framework/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
+    
+    
+      
+        <title>Instalación, configuración y despliegue - Serverless Python</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.e53b48f4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../css/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#que-es-chalice" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Serverless Python" class="md-header__button md-logo" aria-label="Serverless Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Serverless Python
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Instalación, configuración y despliegue
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Serverless Python" class="md-nav__button md-logo" aria-label="Serverless Python" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Serverless Python
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Inicio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introducción
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-serverless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Python + Serverless
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../diagramaPythonServerless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Diagrama general
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Fundamentos Serverless
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Fundamentos Serverless
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../serverless/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ¿Qué es Serverless?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casosdeuso/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Casos de uso con Python
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tecnologias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Servicios clave en AWS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Preparación del entorno
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Preparación del entorno
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../recomendaciones-apis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Requisitos y recomendaciones
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instalacion-uv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instalación de entorno virtual (uv)
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Configuración de cuenta AWS
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../verificacion-entorno/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Verificación del entorno
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Frameworks Serverless con Python
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Frameworks Serverless con Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AWS Chalice
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            AWS Chalice
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Instalación, configuración y despliegue
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instalación, configuración y despliegue
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-chalice" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es Chalice?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es Chalice?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ventajas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos previos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-un-entorno-virtual-opcional-pero-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear un entorno virtual (opcional, pero recomendado)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalar-chalice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Chalice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurar-tus-credenciales-de-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurar tus credenciales de AWS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-para-iniciar-chalice-new-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando para iniciar (chalice new-project)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-basico-con-1-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo básico con 1 endpoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrucciones-para-probar-local-o-desplegar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instrucciones para probar local o desplegar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instrucciones para probar local o desplegar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejecutar-localmente-localhost8000" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecutar localmente (localhost:8000)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puedes-asignar-puerto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puedes asignar puerto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desplegar-en-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desplegar en AWS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactuando-via-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactuando vía payload
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Serverless Framework
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Serverless Framework
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../serverless-framework/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instalación, configuración y despliegue
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    AWS SAM
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            AWS SAM
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-sam-instalacion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Instalación
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../aws-sam/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Uso básico
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comparativa/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Comparativa de frameworks
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Buenas prácticas
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Buenas prácticas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../buenas-practicas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Buenas prácticas y seguridad
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Recursos y referencias
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Recursos y referencias
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../referencias/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Referencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glosario/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Glosario de términos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#que-es-chalice" class="md-nav__link">
+    <span class="md-ellipsis">
+      ¿Qué es Chalice?
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="¿Qué es Chalice?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ventajas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ventajas
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#requisitos-previos" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requisitos previos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#crear-un-entorno-virtual-opcional-pero-recomendado" class="md-nav__link">
+    <span class="md-ellipsis">
+      Crear un entorno virtual (opcional, pero recomendado)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalar-chalice" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalar Chalice
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configurar-tus-credenciales-de-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configurar tus credenciales de AWS
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comando-para-iniciar-chalice-new-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comando para iniciar (chalice new-project)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ejemplo-basico-con-1-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejemplo básico con 1 endpoint
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instrucciones-para-probar-local-o-desplegar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instrucciones para probar local o desplegar
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instrucciones para probar local o desplegar">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ejecutar-localmente-localhost8000" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ejecutar localmente (localhost:8000)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#puedes-asignar-puerto" class="md-nav__link">
+    <span class="md-ellipsis">
+      Puedes asignar puerto
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#desplegar-en-aws" class="md-nav__link">
+    <span class="md-ellipsis">
+      Desplegar en AWS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactuando-via-payload" class="md-nav__link">
+    <span class="md-ellipsis">
+      Interactuando vía payload
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>Instalación, configuración y despliegue</h1>
+
+<h2 id="que-es-chalice">¿Qué es Chalice?</h2>
+<p>AWS Chalice es un microframework de Python desarrollado por Amazon para crear y desplegar rápidamente APIs RESTful, funciones Lambda, y event-driven apps sobre AWS Serverless.</p>
+<ul>
+<li>Similar a Flask, pero diseñado para trabajar directamente con AWS Lambda y API Gateway.</li>
+</ul>
+<h3 id="ventajas">Ventajas</h3>
+<ul>
+<li>🎯 Simplicidad Sintaxis muy parecida a Flask, ideal para Pythonistas</li>
+<li>⚡ Despliegue rápido   Una sola línea despliega todo (chalice deploy)</li>
+<li>🔗 Integración directa con AWS Crea automáticamente Lambda + API Gateway</li>
+<li>🧪 Soporte local   Prueba funciones localmente (chalice local)</li>
+<li>
+<p>📂 Estructura mínima   No necesitas definir manualmente archivos de infraestructura (yaml)</p>
+</li>
+<li>
+<p>AWS Chalice es un framework de Python que permite crear y desplegar aplicaciones Serverless utilizando AWS Lambda y API Gateway de forma sencilla.</p>
+</li>
+</ul>
+<h3 id="requisitos-previos">Requisitos previos</h3>
+<p>Antes de instalar Chalice, asegúrate de tener instalado lo siguiente:</p>
+<ul>
+<li>
+<p>✅ Python 3.7 o superior</p>
+</li>
+<li>
+<p>✅ pip (el gestor de paquetes de Python)</p>
+</li>
+<li>
+<p>✅ Una cuenta de AWS (capa libre) con credenciales configuradas (aws configure)</p>
+</li>
+<li>
+<p>✅ Git (opcional, pero recomendado)</p>
+</li>
+</ul>
+<h3 id="crear-un-entorno-virtual-opcional-pero-recomendado">Crear un entorno virtual (opcional, pero recomendado)</h3>
+<div class="highlight"><pre><span></span><code>python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>.venv
+uv<span class="w"> </span>venv<span class="w"> </span><span class="c1">#si deseas usar uv</span>
+<span class="nb">source</span><span class="w"> </span>.venv/bin/activate<span class="w">  </span><span class="c1"># En Linux o macOS</span>
+.venv<span class="se">\S</span>cripts<span class="se">\a</span>ctivate<span class="w">     </span><span class="c1"># En Windows</span>
+</code></pre></div>
+<h3 id="instalar-chalice">Instalar Chalice</h3>
+<p><div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>chalice
+</code></pre></div>
+- Verificar instalación
+<div class="highlight"><pre><span></span><code>chalice<span class="w"> </span>--version
+</code></pre></div></p>
+<h3 id="configurar-tus-credenciales-de-aws">Configurar tus credenciales de AWS</h3>
+<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>configure
+</code></pre></div>
+<p>Y proporciona:</p>
+<ul>
+<li>
+<p>Access Key ID</p>
+</li>
+<li>
+<p>Secret Access Key</p>
+</li>
+<li>
+<p>Región predeterminada (por ejemplo: us-east-1)</p>
+</li>
+<li>
+<p>Formato de salida (puedes dejarlo en blanco o usar json)</p>
+</li>
+</ul>
+<h3 id="comando-para-iniciar-chalice-new-project">Comando para iniciar (chalice new-project)</h3>
+<p><div class="highlight"><pre><span></span><code>chalice<span class="w"> </span>new-project<span class="w"> </span>myapi
+<span class="nb">cd</span><span class="w"> </span>myapi
+</code></pre></div>
+Esto crea una estructura mínima:
+<div class="highlight"><pre><span></span><code>myapi/
+├──<span class="w"> </span>.chalice/<span class="w">          </span><span class="c1"># Configuración AWS y stages</span>
+├──<span class="w"> </span>app.py<span class="w">             </span><span class="c1"># Tu aplicación (punto de entrada)</span>
+└──<span class="w"> </span>requirements.txt<span class="w">   </span><span class="c1"># Dependencias</span>
+</code></pre></div></p>
+<h3 id="ejemplo-basico-con-1-endpoint">Ejemplo básico con 1 endpoint</h3>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">chalice</span><span class="w"> </span><span class="kn">import</span> <span class="n">Chalice</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">Chalice</span><span class="p">(</span><span class="n">app_name</span><span class="o">=</span><span class="s1">&#39;myapi&#39;</span><span class="p">)</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">index</span><span class="p">():</span>
+    <span class="k">return</span> <span class="p">{</span><span class="s1">&#39;message&#39;</span><span class="p">:</span> <span class="s1">&#39;Hola Pycon Colombia 2025&#39;</span><span class="p">}</span>
+</code></pre></div>
+<h3 id="instrucciones-para-probar-local-o-desplegar">Instrucciones para probar local o desplegar</h3>
+<h4 id="ejecutar-localmente-localhost8000">Ejecutar localmente (localhost:8000)</h4>
+<p><div class="highlight"><pre><span></span><code>chalice<span class="w"> </span><span class="nb">local</span>
+</code></pre></div>
+Abre en tu navegador:
+http://localhost:8000/</p>
+<h4 id="puedes-asignar-puerto">Puedes asignar puerto</h4>
+<div class="highlight"><pre><span></span><code>chalice<span class="w"> </span><span class="nb">local</span><span class="w"> </span>--port<span class="w"> </span><span class="m">8080</span>
+</code></pre></div>
+<h4 id="desplegar-en-aws">Desplegar en AWS</h4>
+<div class="highlight"><pre><span></span><code>chalice<span class="w"> </span>deploy
+</code></pre></div>
+<h3 id="interactuando-via-payload">Interactuando vía payload</h3>
+<div class="highlight"><pre><span></span><code>from<span class="w"> </span>chalice<span class="w"> </span>import<span class="w"> </span>Chalice
+
+<span class="nv">app</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>Chalice<span class="o">(</span><span class="nv">app_name</span><span class="o">=</span><span class="s1">&#39;hello-api&#39;</span><span class="o">)</span>
+
+@app.route<span class="o">(</span><span class="s1">&#39;/greet&#39;</span>,<span class="w"> </span><span class="nv">methods</span><span class="o">=[</span><span class="s1">&#39;POST&#39;</span><span class="o">]</span>,<span class="w"> </span><span class="nv">content_types</span><span class="o">=[</span><span class="s1">&#39;application/json&#39;</span><span class="o">])</span>
+def<span class="w"> </span>greet_user<span class="o">()</span>:
+<span class="w">    </span><span class="nv">request</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>app.current_request
+<span class="w">    </span><span class="nv">body</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>request.json_body
+<span class="w">    </span><span class="nv">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>body.get<span class="o">(</span><span class="s1">&#39;name&#39;</span>,<span class="w"> </span><span class="s1">&#39;Stranger&#39;</span><span class="o">)</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="o">{</span><span class="s2">&quot;message&quot;</span>:<span class="w"> </span>f<span class="s2">&quot;Hello, how are you {name}?&quot;</span><span class="o">}</span>
+
+
+<span class="c1"># The view function above will return {&quot;hello&quot;: &quot;world&quot;}</span>
+<span class="c1"># whenever you make an HTTP GET request to &#39;/&#39;.</span>
+<span class="c1">#</span>
+<span class="c1"># Here are a few more examples:</span>
+<span class="c1">#</span>
+<span class="c1"># @app.route(&#39;/hello/{name}&#39;)</span>
+<span class="c1"># def hello_name(name):</span>
+<span class="c1">#    # &#39;/hello/james&#39; -&gt; {&quot;hello&quot;: &quot;james&quot;}</span>
+<span class="c1">#    return {&#39;hello&#39;: name}</span>
+<span class="c1">#</span>
+<span class="c1"># @app.route(&#39;/users&#39;, methods=[&#39;POST&#39;])</span>
+<span class="c1"># def create_user():</span>
+<span class="c1">#     # This is the JSON body the user sent in their POST request.</span>
+<span class="c1">#     user_as_json = app.current_request.json_body</span>
+<span class="c1">#     # We&#39;ll echo the json body back to the user in a &#39;user&#39; key.</span>
+<span class="c1">#     return {&#39;user&#39;: user_as_json}</span>
+<span class="c1">#    </span>
+<span class="c1"># curl curl -X POST https://b4xrfemfr2.execute-api.us-west-1.amazonaws.com/api/greet \</span>
+<span class="c1">#   -H &quot;Content-Type: application/json&quot; \</span>
+<span class="c1">#   -d &#39;{&quot;name&quot;: &quot;ITPython&quot;}&#39;</span>
+<span class="c1">#</span>
+<span class="c1"># curl -X POST http://localhost:8000/greet \</span>
+<span class="c1">#   -H &quot;Content-Type: application/json&quot; \</span>
+<span class="c1">#   -d &#39;{&quot;name&quot;: &quot;ITPy&quot;}&#39;</span>
+<span class="c1">#</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+      
+        <script src="../js/init-mermaid.js"></script>
+      
+    
+  </body>
+</html>
